@@ -1,10 +1,13 @@
 package com.example.ecommerceupchv2.entities;
 
+import com.example.ecommerceupchv2.entities.pivots.UserRole;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import java.util.Date;
-//import java.util.List;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -27,10 +30,22 @@ public class User {
     @Column(length = 40)
     private String lastName;
 
-    //@Column(TemporalType.DATE)
+    @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
 
-    /*@OneToMany(mappedBy = "user")
-    private List<User> user;*/
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<UserRole> userRoles;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonBackReference
+    private List<Product> products;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<Address> addresses;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonBackReference
+    private List<Order> orders;
 }
