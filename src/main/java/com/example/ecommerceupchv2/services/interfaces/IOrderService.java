@@ -1,8 +1,8 @@
 package com.example.ecommerceupchv2.services.interfaces;
 
-import com.example.ecommerceupchv2.controllers.dtos.requests.CreateOrderRequest;
-import com.example.ecommerceupchv2.controllers.dtos.requests.UpdateOrderRequest;
-import com.example.ecommerceupchv2.controllers.dtos.responses.BaseResponse;
+import com.example.ecommerceupchv2.web.dtos.requests.CreateOrderRequest;
+import com.example.ecommerceupchv2.web.dtos.requests.UpdateOrderRequest;
+import com.example.ecommerceupchv2.web.dtos.responses.BaseResponse;
 import com.example.ecommerceupchv2.entities.Order;
 
 public interface IOrderService {

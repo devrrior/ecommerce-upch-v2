@@ -1,4 +1,4 @@
-package com.example.ecommerceupchv2.controllers.dtos.responses;
+package com.example.ecommerceupchv2.web.dtos.responses;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -11,9 +11,9 @@ public class BaseResponse {
     private Object data;
     private String message;
     private Boolean success;
-    private HttpStatus httpStatus;
+    private HttpStatus status;
 
     public ResponseEntity<BaseResponse> apply() {
-        return new ResponseEntity<>(this, this.getHttpStatus());
+        return new ResponseEntity<>(this, status);
     }
 }

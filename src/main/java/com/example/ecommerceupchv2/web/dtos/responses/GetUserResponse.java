@@ -1,4 +1,4 @@
-package com.example.ecommerceupchv2.controllers.dtos.responses;
+package com.example.ecommerceupchv2.web.dtos.responses;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -7,10 +7,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IOrderRepository extends JpaRepository<Order, Long> {
-    @Query
-    Order getOrderById(Long Id);
-    Boolean existsOrderByStatus(String status);
-
-    Order findByStatus(String status);
-
 }

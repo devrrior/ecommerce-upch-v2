@@ -1,9 +1,9 @@
 package com.example.ecommerceupchv2.services;
 
-import com.example.ecommerceupchv2.controllers.dtos.requests.CreateOrderRequest;
-import com.example.ecommerceupchv2.controllers.dtos.requests.UpdateOrderRequest;
-import com.example.ecommerceupchv2.controllers.dtos.responses.BaseResponse;
-import com.example.ecommerceupchv2.controllers.dtos.responses.GetOrderResponse;
+import com.example.ecommerceupchv2.web.dtos.requests.CreateOrderRequest;
+import com.example.ecommerceupchv2.web.dtos.requests.UpdateOrderRequest;
+import com.example.ecommerceupchv2.web.dtos.responses.BaseResponse;
+import com.example.ecommerceupchv2.web.dtos.responses.GetOrderResponse;
 import com.example.ecommerceupchv2.entities.Order;
 import com.example.ecommerceupchv2.repositories.IOrderRepository;
 import com.example.ecommerceupchv2.services.interfaces.IOrderService;
@@ -23,14 +23,14 @@ public class OrderServiceImpl implements IOrderService {
                     .data(null)
                     .message("Order already exists")
                     .success(Boolean.FALSE)
-                    .httpStatus(HttpStatus.BAD_REQUEST)
+                    .status(HttpStatus.BAD_REQUEST)
                     .build();
         }
         return BaseResponse.builder()
                 .data(toGetOrderResponse(repository.save(toOrder(request))))
                 .message("Order created successfully")
                 .success(Boolean.TRUE)
-                .httpStatus(HttpStatus.OK)
+                .status(HttpStatus.OK)
                 .build();
     }
 
@@ -44,7 +44,7 @@ public class OrderServiceImpl implements IOrderService {
                 .data(toGetOrderResponse(repository.getOrderById(id)))
                 .message("")
                 .success(Boolean.TRUE)
-                .httpStatus(HttpStatus.OK)
+                .status(HttpStatus.OK)
                 .build();
     }
 
@@ -57,7 +57,7 @@ public class OrderServiceImpl implements IOrderService {
                 .data(toGetOrderResponse(repository.save(toOrderUpdate(request, Id))))
                 .message("Order updated successfully")
                 .success(Boolean.TRUE)
-                .httpStatus(HttpStatus.OK)
+                .status(HttpStatus.OK)
                 .build();
     }
 
@@ -71,7 +71,7 @@ public class OrderServiceImpl implements IOrderService {
                 .data(null)
                 .message("Order deleted correctly")
                 .success(Boolean.TRUE)
-                .httpStatus(HttpStatus.OK)
+                .status(HttpStatus.OK)
                 .build();
     }
 
@@ -80,7 +80,7 @@ public class OrderServiceImpl implements IOrderService {
                 .data(null)
                 .message("Order doesn't exist")
                 .success(Boolean.FALSE)
-                .httpStatus(HttpStatus.BAD_REQUEST)
+                .status(HttpStatus.BAD_REQUEST)
                 .build();
     }
 

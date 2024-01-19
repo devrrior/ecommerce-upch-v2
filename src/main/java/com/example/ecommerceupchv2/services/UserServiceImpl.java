@@ -1,9 +1,9 @@
 package com.example.ecommerceupchv2.services;
 
-import com.example.ecommerceupchv2.controllers.dtos.requests.CreateUserRequest;
-import com.example.ecommerceupchv2.controllers.dtos.requests.UpdateUserRequest;
-import com.example.ecommerceupchv2.controllers.dtos.responses.BaseResponse;
-import com.example.ecommerceupchv2.controllers.dtos.responses.GetUserResponse;
+import com.example.ecommerceupchv2.web.dtos.requests.CreateUserRequest;
+import com.example.ecommerceupchv2.web.dtos.requests.UpdateUserRequest;
+import com.example.ecommerceupchv2.web.dtos.responses.BaseResponse;
+import com.example.ecommerceupchv2.web.dtos.responses.GetUserResponse;
 import com.example.ecommerceupchv2.entities.User;
 import com.example.ecommerceupchv2.repositories.IUserRepository;
 import com.example.ecommerceupchv2.services.interfaces.IUserService;
@@ -38,7 +38,7 @@ public class UserServiceImpl implements IUserService {
                 .data(null)
                 .message("User doesn't exist")
                 .success(Boolean.FALSE)
-                .httpStatus(HttpStatus.BAD_REQUEST)
+                .status(HttpStatus.BAD_REQUEST)
                 .build();
     }
 
