@@ -3,7 +3,7 @@ package com.example.ecommerceupchv2.web.controllers;
 import com.example.ecommerceupchv2.web.dtos.requests.CreateUserRequest;
 import com.example.ecommerceupchv2.web.dtos.requests.UpdateUserRequest;
 import com.example.ecommerceupchv2.web.dtos.responses.BaseResponse;
-import com.example.ecommerceupchv2.services.interfaces.IUserService;
+import com.example.ecommerceupchv2.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
