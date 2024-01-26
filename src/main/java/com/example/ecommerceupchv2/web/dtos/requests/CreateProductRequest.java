@@ -1,19 +1,24 @@
 package com.example.ecommerceupchv2.web.dtos.requests;
 
-import com.example.ecommerceupchv2.entities.User;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class CreateOrderRequest {
+public class CreateProductRequest {
     @NotBlank
-    private Long id;
+    private String title;
 
     @NotBlank
-    private String status;
+    private String description;
 
     @NotBlank
-    private User user;
+    private String imageUrl;
+
+    @NotBlank
+    private Integer stock;
+
+    @NotBlank
+    private Float price;
 }

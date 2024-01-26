@@ -5,10 +5,9 @@ import lombok.Setter;
 
 import java.util.Date;
 
-@Getter
 @Setter
-public class GetUserResponse {
-    private Long id;
+@Getter
+public class CreateUserResponse {
     private String email;
     private String firstName;
     private String lastName;

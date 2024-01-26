@@ -12,6 +12,7 @@ public class BaseResponse {
     private String message;
     private Boolean success;
     private HttpStatus status;
+    private Integer statusCode;
 
     public ResponseEntity<BaseResponse> apply() {
         return new ResponseEntity<>(this, status);
